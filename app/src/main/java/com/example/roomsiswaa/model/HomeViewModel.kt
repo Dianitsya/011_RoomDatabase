@@ -3,7 +3,6 @@ package com.example.roomsiswaa.model
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.roomsiswaa.data.Siswa
-import com.example.roomsiswaa.repositori.OfflineRepositoriSiswa
 import com.example.roomsiswaa.repositori.RepositoriSiswa
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow

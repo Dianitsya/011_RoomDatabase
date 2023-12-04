@@ -40,7 +40,7 @@ object DestinasiEntry: DestinasiNavigasi {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun  EntrySiswaScreen(
+fun EntrySiswaScreen(
     navigateBack: () -> Unit,
     modifier: Modifier = Modifier,
     viewModel: EntryViewModel = viewModel(factory = PenyediaViewModel.Factory)
@@ -55,15 +55,14 @@ fun  EntrySiswaScreen(
                 canNavigateBack = true,
                 scrollBehavior = scrollBehavior
             )
-        }
-    ){
-            innerPadding ->
+        }) { innerPadding ->
         EntrySiswaBody(
             uiStateSiswa = viewModel.uiStateSiswa,
             onSiswaValueChange = viewModel::updateUiState,
             onSaveClick = {
                 coroutineScope.launch {
                     viewModel.saveSiswa()
+                    navigateBack()
                 }
             },
             modifier = Modifier
@@ -75,11 +74,6 @@ fun  EntrySiswaScreen(
 }
 
 @Composable
-fun SiswaTopAppBar(title: String, canNavigateBack: Boolean, scrollBehavior: TopAppBarScrollBehavior) {
-
-}
-
-@Composable
 fun EntrySiswaBody(
     uiStateSiswa: UIStateSiswa,
     onSiswaValueChange: (DetailSiswa) -> Unit,
@@ -87,7 +81,7 @@ fun EntrySiswaBody(
     modifier: Modifier = Modifier
 ){
     Column (
-        verticalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.padding_large)),
+        verticalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.padding_Large)),
         modifier = modifier.padding(dimensionResource(id = R.dimen.padding_medium))
     ){
         FormInputSiswa(

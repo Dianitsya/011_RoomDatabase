@@ -30,6 +30,7 @@ import com.example.roomsiswaa.model.EntryViewModel
 import com.example.roomsiswaa.model.PenyediaViewModel
 import com.example.roomsiswaa.model.UIStateSiswa
 import com.example.roomsiswaa.navigasi.DestinasiNavigasi
+import com.example.roomsiswaa.navigasi.SiswaTopAppBar
 import kotlinx.coroutines.launch
 
 
@@ -61,7 +62,7 @@ fun EntrySiswaScreen(
             onSiswaValueChange = viewModel::updateUiState,
             onSaveClick = {
                 coroutineScope.launch {
-                    viewModel.saveSiswa()
+                    viewModel.SaveSiswa()
                     navigateBack()
                 }
             },
@@ -141,5 +142,7 @@ fun FormInputSiswa(
         }
         Divider(
             thickness = dimensionResource(R.dimen.padding_small),
-            modifier = Modifier.padding(bottom = dimensionResource(R.dimen.padding_medium ))
+            modifier = Modifier.padding(bottom = dimensionResource(R.dimen.padding_medium )
+            ))
+    }
 }

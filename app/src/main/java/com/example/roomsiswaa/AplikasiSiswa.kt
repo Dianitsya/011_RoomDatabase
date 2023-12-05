@@ -6,7 +6,7 @@ import com.example.roomsiswaa.repositori.ContainerDataApp
 
 class AplikasiSiswa : Application() {
     /**
-     * AppContainer instance digunakan oleh kelas-kelas lainnya untuk mendapatkan dependensi
+     * AppContainer instance digunakan oleh kelas-kelas lainnya untuk mendapatkan  dependensi
      */
     lateinit var container: ContainerApp
     override fun onCreate() {
